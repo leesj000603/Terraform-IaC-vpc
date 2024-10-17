@@ -237,6 +237,13 @@ resource "aws_eip" "eip" {
 }
 ```
 
+### terraform 변동 확인 후 적용
+
+```bash
+$terraform plan # 변동 예정 사항 확인
+$terraform apply -auto-approve
+```
+
 ### 생성된 모습
 
 ![image](https://github.com/user-attachments/assets/71a5b749-a12e-469f-892e-45d4d3615fe2)
@@ -268,6 +275,13 @@ resource "aws_nat_gateway" "nat-gw" {
   # 이 NAT 게이트웨이는 인터넷 게이트웨이에 의존하므로 depends_on 사용.
   depends_on = [aws_internet_gateway.internet-gw]
 }
+```
+
+### terraform 변동 확인 후 적용
+
+```bash
+$terraform plan # 변동 예정 사항 확인
+$terraform apply -auto-approve
 ```
 
 ### 생성된 모습
@@ -321,6 +335,13 @@ resource "aws_route_table_association" "pub-rt-association-2" {
 
 ```
 
+### terraform 변동 확인 후 적용
+
+```bash
+$terraform plan # 변동 예정 사항 확인
+$terraform apply -auto-approve
+```
+
 ### public라우팅 테이블 생성, 적용된 모습
 
 ![image](https://github.com/user-attachments/assets/18c84c8b-de35-4c43-91af-5ac23544da1c)
@@ -364,6 +385,13 @@ resource "aws_route_table_association" "pri-rt-association-2" {
   subnet_id      = aws_subnet.app-subnet2.id
   route_table_id = aws_route_table.private-route-table.id
 }
+```
+
+### terraform 변동 확인 후 적용
+
+```bash
+$terraform plan # 변동 예정 사항 확인
+$terraform apply -auto-approve
 ```
 
 ### private라우팅 테이블 생성, 적용된 모습
